@@ -1,0 +1,22 @@
+import sqlite3
+
+connection=sqlite3.connect("employee.db")
+
+cursor=connection.cursor()
+
+cursor.execute(""" create table emptab(empid int primary key,empname varchar(20),empsalary int)""")
+
+cursor.execute("""insert into emptab values(1,"Sathishsivam",3434)""")
+cursor.execute("""insert into emptab values(2,"Sivam",3434)""")
+cursor.execute("""insert into emptab values(3,"Sudhan",2434)""")
+cursor.execute("""insert into emptab values(4,"Vignesh",4434)""")
+cursor.execute("""insert into emptab values(5,"Bhuvanesh",5434)""")
+
+# data=cursor.execute("select * from emptab where empsalary>43434")
+# for i in data:
+#     print(i)
+
+connection.commit()
+connection.close()
+
+
